@@ -60,7 +60,16 @@ FocusTimer.prototype.tick = function () {
 FocusTimer.prototype.start = function () {
   if (this.running) return;
   this.running = true;
+  this.displayEl.style.color = ""; // back to normal if it was green
   this.intervalId = setInterval(() => this.tick(), 1000);
+};
+
+FocusTimer.prototype.reset = function () {
+  clearInterval(this.intervalId);
+  this.running = false;
+  this.remaining = this.totalSeconds;
+  this.displayEl.style.color = "";
+  this.render();
 };
 
 const timers = [];
@@ -69,6 +78,7 @@ document.querySelectorAll(".timer-display").forEach((d) => {
   timers.push(new FocusTimer(d, mins));
 });
 
+// start buttons
 document.querySelectorAll(".timer-btn").forEach((btn, i) => {
   btn.addEventListener("click", () => {
     const t = timers[i];
@@ -76,6 +86,19 @@ document.querySelectorAll(".timer-btn").forEach((btn, i) => {
       t.start();
       btn.textContent = "Running";
     }
+  });
+});
+
+// reset buttons
+document.querySelectorAll(".timer-reset-btn").forEach((btn, i) => {
+  btn.addEventListener("click", () => {
+    const t = timers[i];
+    if (t) {
+      t.reset();
+    }
+    // also reset button text
+    const startBtn = document.querySelectorAll(".timer-btn")[i];
+    if (startBtn) startBtn.textContent = "Start";
   });
 });
 
