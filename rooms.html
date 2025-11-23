@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Study App - Rooms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-theme="dark">
+    <div class="app-shell">
+        <!-- Top nav -->
+        <header class="top-nav">
+            <div class="brand">
+                <span class="brand-title">Study App</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="rooms.html" class="nav-link nav-link-active">Rooms</a>
+                <a href="files.html" class="nav-link">Files</a>
+                <a href="people.html" class="nav-link">People</a>
+            </nav>
+
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle light or dark mode">
+                ☾
+            </button>
+        </header>
+
+        <main class="main">
+            <section class="section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 class="section-title" style="margin-bottom: 0;">Study Rooms</h2>
+
+                    <div class="filter-bar" style="display: flex; gap: 8px;">
+                        <button class="pill-btn">All</button>
+                        <button class="pill-btn"
+                            style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted);">Math</button>
+                        <button class="pill-btn"
+                            style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted);">Science</button>
+                        <button class="pill-btn"
+                            style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted);">Literature</button>
+                        <button class="pill-btn"
+                            style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted);">History</button>
+                        <button class="pill-btn"
+                            style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted);">CS</button>
+                    </div>
+                </div>
+
+                <div class="rooms-grid">
+                    <!-- Room 1 -->
+                    <article class="room-card">
+                        <div class="room-header">
+                            <h3 class="room-name">Calc II – Midterm Prep</h3>
+                            <button class="pill-btn open-room-btn"
+                                onclick="window.location.href='room-details.html?room=Calc%20II'">Join</button>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <div class="avatars">
+                                <span class="avatar avatar-a"></span>
+                                <span class="avatar avatar-b"></span>
+                                <span class="avatar avatar-c"></span>
+                            </div>
+                            <span class="room-online">5 online</span>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <span class="room-label">Focus Timer</span>
+                            <span class="timer-display">25:00</span>
+                        </div>
+                    </article>
+
+                    <!-- Room 2 -->
+                    <article class="room-card">
+                        <div class="room-header">
+                            <h3 class="room-name">History Project</h3>
+                            <button class="pill-btn open-room-btn"
+                                onclick="window.location.href='room-details.html?room=History%20Project'">Join</button>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <div class="avatars">
+                                <span class="avatar avatar-d"></span>
+                                <span class="avatar avatar-e"></span>
+                            </div>
+                            <span class="room-online">3 online</span>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <span class="room-label">Focus Timer</span>
+                            <span class="timer-display">15:00</span>
+                        </div>
+                    </article>
+
+                    <!-- Room 3 -->
+                    <article class="room-card">
+                        <div class="room-header">
+                            <h3 class="room-name">Physics Lab Report</h3>
+                            <button class="pill-btn open-room-btn"
+                                onclick="window.location.href='room-details.html?room=Physics%20Lab'">Join</button>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <div class="avatars">
+                                <span class="avatar avatar-f"></span>
+                                <span class="avatar avatar-a"></span>
+                                <span class="avatar avatar-b"></span>
+                                <span class="avatar avatar-c"></span>
+                            </div>
+                            <span class="room-online">8 online</span>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <span class="room-label">Focus Timer</span>
+                            <span class="timer-display">45:00</span>
+                        </div>
+                    </article>
+
+                    <!-- Room 4 -->
+                    <article class="room-card">
+                        <div class="room-header">
+                            <h3 class="room-name">Poetry Analysis</h3>
+                            <button class="pill-btn open-room-btn"
+                                onclick="window.location.href='room-details.html?room=Literature'">Join</button>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <div class="avatars">
+                                <span class="avatar avatar-d"></span>
+                            </div>
+                            <span class="room-online">2 online</span>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <span class="room-label">Focus Timer</span>
+                            <span class="timer-display">30:00</span>
+                        </div>
+                    </article>
+
+                    <!-- Room 5 -->
+                    <article class="room-card">
+                        <div class="room-header">
+                            <h3 class="room-name">Data Structures</h3>
+                            <button class="pill-btn open-room-btn"
+                                onclick="window.location.href='room-details.html?room=Data%20Structures'">Join</button>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <div class="avatars">
+                                <span class="avatar avatar-e"></span>
+                                <span class="avatar avatar-f"></span>
+                                <span class="avatar avatar-a"></span>
+                            </div>
+                            <span class="room-online">12 online</span>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <span class="room-label">Focus Timer</span>
+                            <span class="timer-display">50:00</span>
+                        </div>
+                    </article>
+
+                    <!-- Room 6 -->
+                    <article class="room-card">
+                        <div class="room-header">
+                            <h3 class="room-name">Organic Chemistry</h3>
+                            <button class="pill-btn open-room-btn"
+                                onclick="window.location.href='room-details.html?room=Chemistry'">Join</button>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <div class="avatars">
+                                <span class="avatar avatar-b"></span>
+                                <span class="avatar avatar-c"></span>
+                            </div>
+                            <span class="room-online">4 online</span>
+                        </div>
+
+                        <div class="room-meta-row">
+                            <span class="room-label">Focus Timer</span>
+                            <span class="timer-display">60:00</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

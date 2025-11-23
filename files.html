@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Study App - Files</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-theme="dark">
+    <div class="app-shell">
+        <!-- Top nav -->
+        <header class="top-nav">
+            <div class="brand">
+                <span class="brand-title">Study App</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="rooms.html" class="nav-link">Rooms</a>
+                <a href="files.html" class="nav-link nav-link-active">Files</a>
+                <a href="people.html" class="nav-link">People</a>
+            </nav>
+
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle light or dark mode">
+                ☾
+            </button>
+        </header>
+
+        <main class="main">
+            <section id="files-page" class="section">
+                <h2 class="section-title">Shared Files</h2>
+
+                <div class="panel">
+                    <ul class="file-list">
+                        <li class="file-item">
+                            📘 <span>Calculus_Review.pdf</span>
+                        </li>
+                        <li class="file-item">
+                            🧮 <span>Practice_Problems.xlsx</span>
+                        </li>
+                        <li class="file-item">
+                            📝 <span>Notes_Chapter5.docx</span>
+                        </li>
+                        <li class="file-item">
+                            📊 <span>Lab_Results_Data.csv</span>
+                        </li>
+                        <li class="file-item">
+                            🖼️ <span>Diagram_Structure.png</span>
+                        </li>
+                        <li class="file-item">
+                            📚 <span>History_Reading_List.pdf</span>
+                        </li>
+                    </ul>
+                    <button class="pill-btn add-file-btn" type="button" id="addFileBtn">
+                        + Add mock file
+                    </button>
+                </div>
+            </section>
+
+            <!-- Hidden elements for script compatibility -->
+            <div id="activityList" style="display:none;"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

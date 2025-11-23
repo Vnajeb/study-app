@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Study App - Room Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-theme="dark">
+    <div class="app-shell room-details-shell">
+        <!-- Top nav -->
+        <header class="top-nav">
+            <div class="brand">
+                <span class="brand-title">Study App</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="rooms.html" class="nav-link back-link">← Back to Rooms</a>
+            </nav>
+
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle light or dark mode">
+                ☾
+            </button>
+        </header>
+
+        <main class="main room-details-main">
+            <div class="room-header-bar">
+                <h2 class="section-title section-title-highlight" id="roomTitle">
+                    Inside Study Room
+                </h2>
+                <div class="room-actions">
+                    <span class="room-status-badge">Live</span>
+                </div>
+            </div>
+
+            <div class="room-layout-premium">
+                <!-- Chat & video -->
+                <section class="panel premium-panel chat-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">Chat & Video</h3>
+                        <button id="videoToggle" class="icon-btn" title="Expand Video">⤢</button>
+                    </div>
+
+                    <div class="video-wrapper">
+                        <div id="videoBox" class="video-box premium-video">
+                            <div class="video-placeholder-content">
+                                <span class="video-icon">📹</span>
+                                <span>Video Stream</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-area premium-chat">
+                        <div class="chat-message">
+                            <span class="chat-name chat-name-alice">Alice:</span>
+                            <span>Let’s start with derivatives.</span>
+                        </div>
+                        <div class="chat-message">
+                            <span class="chat-name chat-name-ben">Ben:</span>
+                            <span>I’ll share my notes.</span>
+                        </div>
+                    </div>
+
+                    <form id="chatForm" class="chat-form premium-chat-form">
+                        <input id="chatInput" class="chat-input premium-input" type="text"
+                            placeholder="Type a message..." />
+                        <button type="submit" class="pill-btn send-btn">Send</button>
+                    </form>
+                </section>
+
+                <!-- Sidebar: Files & People -->
+                <aside class="sidebar-column">
+                    <!-- Shared files -->
+                    <section id="files" class="panel premium-panel">
+                        <h3 class="panel-title">Shared Files</h3>
+                        <ul class="file-list premium-list">
+                            <li class="file-item">
+                                <span class="file-icon">📘</span> <span>Calculus_Review.pdf</span>
+                            </li>
+                            <li class="file-item">
+                                <span class="file-icon">🧮</span> <span>Practice_Problems.xlsx</span>
+                            </li>
+                            <li class="file-item">
+                                <span class="file-icon">📝</span> <span>Notes_Chapter5.docx</span>
+                            </li>
+                        </ul>
+                        <button class="pill-btn add-file-btn full-width-btn" type="button" id="addFileBtn">
+                            + Add File
+                        </button>
+                    </section>
+
+                    <!-- Presence & activity -->
+                    <section id="people" class="panel premium-panel">
+                        <h3 class="panel-title">Live Presence</h3>
+
+                        <ul class="presence-list presence-list-compact premium-list">
+                            <li class="presence-item">
+                                <div class="user-info">
+                                    <span class="status-dot status-online"></span>
+                                    <span class="presence-name">Alice</span>
+                                </div>
+                                <span class="presence-state">Online</span>
+                            </li>
+                            <li class="presence-item">
+                                <div class="user-info">
+                                    <span class="status-dot status-active"></span>
+                                    <span class="presence-name">Ben</span>
+                                </div>
+                                <span class="presence-state">Active</span>
+                            </li>
+                            <li class="presence-item">
+                                <div class="user-info">
+                                    <span class="status-dot status-idle"></span>
+                                    <span class="presence-name">Cara</span>
+                                </div>
+                                <span class="presence-state">Idle</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="panel premium-panel activity-panel">
+                        <h3 class="panel-title">Activity Log</h3>
+                        <ul id="activityList" class="activity-list-premium">
+                            <li>Ben uploaded <strong>Practice_Problems.xlsx</strong></li>
+                            <li>Alice started a 25-minute focus timer</li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

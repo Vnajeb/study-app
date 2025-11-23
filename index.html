@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Study App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-theme="dark">
+  <div class="app-shell">
+    <!-- Top nav -->
+    <header class="top-nav">
+      <div class="brand">
+        <span class="brand-title">Study App</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link nav-link-active">Dashboard</a>
+        <a href="rooms.html" class="nav-link">Rooms</a>
+        <a href="files.html" class="nav-link">Files</a>
+        <a href="people.html" class="nav-link">People</a>
+      </nav>
+
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle light or dark mode">
+        ☾
+      </button>
+    </header>
+
+    <main class="main">
+      <!-- DASHBOARD -->
+      <section id="dashboard" class="section">
+        <div class="section-row">
+          <!-- left: study rooms -->
+          <div class="section-main">
+            <h2 class="section-title">Your Study Rooms</h2>
+
+            <div class="rooms-grid">
+              <!-- Room 1 -->
+              <article class="room-card" data-room-name="Calc II – Midterm">
+                <div class="room-header">
+                  <h3 class="room-name">Calc II – Midterm</h3>
+                  <button class="pill-btn open-room-btn">Open</button>
+                </div>
+
+                <div class="room-meta-row">
+                  <div class="avatars">
+                    <span class="avatar avatar-a"></span>
+                    <span class="avatar avatar-b"></span>
+                    <span class="avatar avatar-c"></span>
+                    <span class="avatar avatar-d"></span>
+                    <span class="avatar avatar-e"></span>
+                  </div>
+                  <span class="room-online">5 online</span>
+                </div>
+
+                <div class="room-meta-row">
+                  <span class="room-label">Focus Timer</span>
+                  <span class="timer-display" data-minutes="25">25:00</span>
+                  <button class="pill-btn timer-btn">Start</button>
+                </div>
+              </article>
+
+              <!-- Room 2 -->
+              <article class="room-card" data-room-name="History Project">
+                <div class="room-header">
+                  <h3 class="room-name">History Project</h3>
+                  <button class="pill-btn open-room-btn">Open</button>
+                </div>
+
+                <div class="room-meta-row">
+                  <div class="avatars">
+                    <span class="avatar avatar-b"></span>
+                    <span class="avatar avatar-c"></span>
+                    <span class="avatar avatar-f"></span>
+                  </div>
+                  <span class="room-online">3 online</span>
+                </div>
+
+                <div class="room-meta-row">
+                  <span class="room-label">Focus Timer</span>
+                  <span class="timer-display" data-minutes="15">15:00</span>
+                  <button class="pill-btn timer-btn">Start</button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- right: live presence -->
+          <aside class="section-side">
+            <h2 class="section-title">Live Presence</h2>
+            <ul class="presence-list">
+              <li class="presence-item">
+                <span class="status-dot status-online"></span>
+                <span class="presence-name">Alice</span>
+                <span class="presence-state">Online</span>
+              </li>
+              <li class="presence-item">
+                <span class="status-dot status-active"></span>
+                <span class="presence-name">Ben</span>
+                <span class="presence-state">Active</span>
+              </li>
+              <li class="presence-item">
+                <span class="status-dot status-idle"></span>
+                <span class="presence-name">Cara</span>
+                <span class="presence-state">Idle</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- STUDY ROOM VIEW -->
+      <section id="room-view" class="section">
+        <h2 class="section-title section-title-highlight">
+          Inside Study Room – <span id="activeRoomName">Calc II – Midterm</span>
+        </h2>
+
+        <div class="room-layout">
+          <!-- Chat & video -->
+          <section class="panel">
+            <h3 class="panel-title">Chat & Video</h3>
+
+            <div class="video-wrapper">
+              <div id="videoBox" class="video-box">
+                Video Area
+              </div>
+              <button id="videoToggle" class="pill-btn video-toggle-btn">
+                Expand video
+              </button>
+            </div>
+
+            <div class="chat-area">
+              <div class="chat-message">
+                <span class="chat-name chat-name-alice">Alice:</span>
+                <span>Let’s start with derivatives.</span>
+              </div>
+              <div class="chat-message">
+                <span class="chat-name chat-name-ben">Ben:</span>
+                <span>I’ll share my notes.</span>
+              </div>
+            </div>
+
+            <form id="chatForm" class="chat-form">
+              <label for="chatInput" class="chat-label">Type a message</label>
+              <div class="chat-input-row">
+                <input id="chatInput" class="chat-input" type="text" placeholder="Say something to the group..." />
+                <button type="submit" class="pill-btn">Send</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Shared files -->
+          <section id="files" class="panel">
+            <h3 class="panel-title">Shared Files</h3>
+            <ul class="file-list">
+              <li class="file-item">
+                📘 <span>Calculus_Review.pdf</span>
+              </li>
+              <li class="file-item">
+                🧮 <span>Practice_Problems.xlsx</span>
+              </li>
+              <li class="file-item">
+                📝 <span>Notes_Chapter5.docx</span>
+              </li>
+            </ul>
+            <button class="pill-btn add-file-btn" type="button" id="addFileBtn">
+              + Add mock file
+            </button>
+          </section>
+
+          <!-- Presence & activity -->
+          <aside id="people" class="panel">
+            <h3 class="panel-title">Live Presence & Activity</h3>
+
+            <ul class="presence-list presence-list-compact">
+              <li class="presence-item">
+                <span class="status-dot status-online"></span>
+                <span class="presence-name">Alice</span>
+                <span class="presence-state">Online</span>
+              </li>
+              <li class="presence-item">
+                <span class="status-dot status-active"></span>
+                <span class="presence-name">Ben</span>
+                <span class="presence-state">Active</span>
+              </li>
+              <li class="presence-item">
+                <span class="status-dot status-idle"></span>
+                <span class="presence-name">Cara</span>
+                <span class="presence-state">Idle</span>
+              </li>
+            </ul>
+
+            <div class="activity-log">
+              <h4 class="activity-title">Activity</h4>
+              <ul id="activityList">
+                <li>Ben uploaded <strong>Practice_Problems.xlsx</strong></li>
+                <li>Alice started a 25-minute focus timer</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
