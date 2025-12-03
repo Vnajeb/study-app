@@ -144,9 +144,10 @@ if (addFileBtn && fileList) {
     const count = fileList.children.length + 1;
     const li = document.createElement("li");
     li.className = "file-item";
-    li.innerHTML = "📄 <span>Extra_Notes_" + count + ".txt</span>";
+    li.innerHTML = " <span>Extra_Notes_" + count + ".txt</span>";
     fileList.appendChild(li);
 
+    
     if (activityList) {
       const log = document.createElement("li");
       log.textContent = "You added Extra_Notes_" + count + ".txt";
